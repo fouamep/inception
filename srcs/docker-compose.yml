@@ -30,7 +30,7 @@ services:
       - inception
     volumes:
       - db:/var/lib/mysql
-    restart: always
+    restart: unless-stopped
     env_file:
       - .env
 networks:
@@ -41,10 +41,10 @@ volumes:
     driver_opts:
       device: /Users/fbouanan/Desktop/inception/srcs/Wordpress/my_file/
       o: bind
-      type: none
+      type: bind
   db:
     driver: local
     driver_opts:
       device: /Users/fbouanan/Desktop/inception/srcs/MariaDB/db_files/
       o: bind
-      type: none
+      type: bind
