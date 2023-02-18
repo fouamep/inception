@@ -39,12 +39,12 @@ volumes:
   wp:
     driver: local
     driver_opts:
-      device: /Users/fbouanan/Desktop/inception/srcs/Wordpress/my_file/
+      device: /home/fbouanan/data/wordpress
       o: bind
       type: bind
   db:
     driver: local
     driver_opts:
-      device: /Users/fbouanan/Desktop/inception/srcs/MariaDB/db_files/
+      device: /home/fbouanan/data/database
       o: bind
       type: bind

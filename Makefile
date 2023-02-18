@@ -23,4 +23,6 @@ delete:
 	cd srcs ; docker system prune -a
 
 rm_volumes:
-		docker ps -aq | xargs docker rm -fv && docker volume ls -q | xargs docker volume rm
+	docker ps -aq | xargs docker rm -fv && docker volume ls -q | xargs docker volume rm 
+rm_data:
+	rm -rf /home/fbouanan/data/wordpress/* && rm -rf /home/fbouanan/data/database/*
