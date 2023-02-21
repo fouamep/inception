@@ -3,6 +3,7 @@ services:
   nginx:
     build: ./requirements/Nginx
     container_name: nginx
+    image: nginx
     ports:
       - 443:443
     volumes:
@@ -13,8 +14,9 @@ services:
        - wordpress
   wordpress:
     build: ./requirements/Wordpress
+    image: wordpress
     container_name: wordpress
-    restart: unless-stopped
+    restart: always
     networks:
       - inception
     volumes: 
@@ -26,11 +28,12 @@ services:
   mariadb:
     build: ./requirements/MariaDB
     container_name: mariadb
+    image: mariadb
     networks:
       - inception
     volumes:
       - db:/var/lib/mysql
-    restart: unless-stopped
+    restart: always
     env_file:
       - .env
 networks:
